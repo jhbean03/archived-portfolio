@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Tiny5&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 /* Variables */
 :root {
     --font-family: "Dosis", sans-serif;
+    --font-family-body: "PT Serif", serif;
     --normal-font: 400;
     --bold-font: 700;
     --bolder-font: 900;
@@ -46,6 +48,7 @@ body {
     font-family: var(--font-family);
 }
 
+/* Navbar */
 nav {
     position: sticky;
     top: 0;
@@ -61,6 +64,7 @@ nav {
 
 nav h1 {
     color: var(--primary-color);
+    font-size: 40px;
 }
 
 nav a {
@@ -79,4 +83,76 @@ nav ul {
 
 nav ul li {
     font-weight: var(--bold-font);
+    font-size: 22px;
+}
+
+.burger-menu {
+    color: var(--primary-color);
+    font-size: 2rem;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    display: none;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    max-width: 100rem;
+    margin: auto;
+}
+
+.hero img {
+    height: 35rem;
+    width: 70rem;
+}
+
+.bio {
+    width: 75rem;
+    padding: 0.625rem;
+    border-radius: 6px;
+    box-shadow: 0px 2px 15px 2px var(--primary-shadow);
+}
+
+.bio h1 {
+    margin-bottom: var(--bottom-margin);
+}
+
+.bio h2 {
+    color: var(--primary-color);
+}
+
+.bio p {
+    line-height: var(--line-height);
+    padding: 0.3rem 0;
+    font-family: var(--font-family-body);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.hero-separator {
+    padding: 2rem;
+    border: none;
+}
+
+/* More about */
+.more-about {
+    background-color: var(--bg-color);
+    padding: 0rem 6rem;
+}
+
+.more-about h2 {
+    margin-bottom: var(--bottom-margin);
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.more-about p {
+    line-height: var(--line-height);
+    padding: 0.4rem;
+    font-family: var(--font-family-body);
+    font-weight: 500;
 }
