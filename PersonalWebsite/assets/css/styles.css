@@ -135,7 +135,6 @@ nav ul li {
 
 .hero-separator {
     padding: 2rem;
-    border: none;
 }
 
 /* More about */
@@ -155,4 +154,40 @@ nav ul li {
     padding: 0.4rem;
     font-family: var(--font-family-body);
     font-weight: 500;
+}
+
+.more-about-separator {
+    padding: 2rem;
+}
+
+/* Skills */
+.skills {
+    max-width: 68.75rem;
+    margin: auto;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.skill-header {
+    margin-bottom: 1rem;
+}
+
+.skills-wrapper img {
+    padding: 1.25rem;
+}
+
+.icon {
+    width: 11.875rem;
+    height: 11.25rem;
+}
+
+.skills-header-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px;
+}
+
+.skills-header-container h3 {
+    margin: 0 10px;
 }
