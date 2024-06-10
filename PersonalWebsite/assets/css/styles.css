@@ -12,7 +12,7 @@
     --primary-color: #046b00;
     --secondary-color: #0068c9;
     --primary-shadow: #8b8eaf;
-    --secondary-shadow: #a17a69;
+    --secondary-shadow: #007599;
     --bottom-margin: 0.5rem;
     --bottom-margin-2: 1rem;
     --line-height: 1.7rem; 
@@ -105,9 +105,9 @@ nav ul li {
     margin: auto;
 }
 
-.hero img {
+.hero-img {
     height: 35rem;
-    width: 70rem;
+    width: 53rem;
 }
 
 .bio {
@@ -162,7 +162,6 @@ nav ul li {
 
 /* Skills */
 .skills {
-    max-width: 68.75rem;
     margin: auto;
     text-align: center;
     color: var(--primary-color);
@@ -174,6 +173,23 @@ nav ul li {
 
 .skills-wrapper img {
     padding: 1.25rem;
+    justify-content: center;
+    align-items: center;
+    margin-left: 120px;
+    margin-right: 120px;
+}
+
+.first-set {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.second-set {
+    padding-top: 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .icon {
@@ -181,13 +197,35 @@ nav ul li {
     height: 11.25rem;
 }
 
-.skills-header-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 20px;
+.icon-card {
+    background-color: #fff;
+    border-radius: 11px;
+    box-shadow: 0 3px 10px var(--secondary-shadow);
+    padding: 20px;
+    margin: 10px;
 }
 
-.skills-header-container h3 {
-    margin: 0 10px;
+.additional-skills-container {
+    display: flex;
+    justify-content: start;
+    padding-left: 23.5rem;
+    gap: 10rem;
+}
+
+.skill-list {
+    font-family: var(--font-family-body);
+    color: black;
+}
+
+.skill-list li:not(:first-of-type){
+    padding-top: 1em;
+}
+
+.skill-list li:not(:last-of-type){
+    padding-bottom: 1em;
+}
+
+.skills-separator {
+    padding-top: 2.5rem;
+    padding-bottom: 2rem;
 }
