@@ -207,8 +207,8 @@ nav ul li {
 
 .additional-skills-container {
     display: flex;
-    justify-content: start;
-    padding-left: 23.5rem;
+    justify-content: center;
+    /* padding-left: 23.5rem; */
     gap: 10rem;
 }
 
