@@ -139,8 +139,7 @@ nav ul li {
 
 /* More about */
 .more-about {
-    background-color: var(--bg-color);
-    padding: 0rem 6rem;
+    padding: 0rem 12rem;
 }
 
 .more-about h2 {
@@ -208,7 +207,6 @@ nav ul li {
 .additional-skills-container {
     display: flex;
     justify-content: center;
-    /* padding-left: 23.5rem; */
     gap: 10rem;
 }
 
@@ -229,3 +227,115 @@ nav ul li {
     padding-top: 2.5rem;
     padding-bottom: 2rem;
 }
+
+/* Projects */
+.project-pic {
+    width: 195px;
+    height: 146.25px;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: center;
+}
+
+.projects-title {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.project-container {
+    text-align: center;
+    width: 21.875rem;
+    padding: 1rem;
+}
+
+.project-container p {
+    padding: 0.4rem;
+    font-family: var(--font-family-body);
+}
+
+.project-container a {
+    font-family: var(--font-family-body);
+}
+
+.project-title {
+    margin-bottom: var(--bottom-margin);
+    color: var(--primary-color);
+}
+
+.project-details {
+    margin-bottom: var(--bottom-margin);
+}
+
+.project-card {
+    background-color: #fff;
+    border-radius: 11px;
+    box-shadow: 0 3px 10px var(--primary-shadow);
+    padding: 20px;
+    margin: 10px;
+}
+
+.projects-separator {
+    padding-top: 2.5rem;
+    padding-bottom: 2rem;
+}
+
+/* Coursework */ 
+.coursework-title {
+    text-align: center;
+    /* margin-bottom: 1rem; */
+    color: var(--primary-color);
+}
+
+.third-year {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.second-year {
+    padding-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.first-year {
+    padding-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.semester-title {
+    margin-bottom: var(--bottom-margin);
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.coursework ul {
+    width: 40rem;
+    height: 10rem;
+    font-family: var(--font-family-body);
+}
+
+.coursework ul li:not(:first-of-type){
+    padding-top: 0.3rem;
+}
+
+.coursework ul li:not(:last-of-type){
+    padding-bottom: 0.3rem;
+}
+
+.semester {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px var(--primary-shadow);
+    padding: 30px;
+    padding-bottom: 50px;
+    padding-top: 20px;
+    margin: 30px;
+}
+
