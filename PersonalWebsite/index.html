@@ -218,7 +218,7 @@
                         src="assets/images/GelSample.jpg"
                         alt="gel-sample"
                         loading="lazy"
-                        class="project-pic"
+                        class="project-pic-1"
                     />
                     <h3 class="project-title">Band Intensity Quantification for Gel Electrophoresis</h3>
                     <p class="project-details">
@@ -230,10 +230,25 @@
                 </div>
                 <div class="project-container project-card">
                     <img
+                        src="assets/images/physionet.gif"
+                        alt="checkers"
+                        loading="lazy"
+                        class="project-pic-2"
+                    />
+                    <h3 class="project-title">George B. Moody PhysioNet Challenge</h3>
+                    <p class="project-details">
+                        During the summer of 2023, I worked with the Ohio State University's Department of Biomedical Informatics as an undergraduate intern! I was tasked
+                        with using Python to write a program which would accurately classify a comatose patient's prognosis through machine learning. My model was trained
+                        off of general patient metadata along with EEG and ECG data obtained from the patient.
+                    </p>
+                    <a href="https://moody-challenge.physionet.org/2023/" target="_blank" class="project-link">Challenge Description</a>
+                </div>
+                <div class="project-container project-card">
+                    <img
                         src="assets/images/robot.jpg"
                         alt="robot"
                         loading="lazy"
-                        class="project-pic"
+                        class="project-pic-3"
                     />
                     <h3 class="project-title">FEH Robot Project</h3>
                     <p class="project-details">
@@ -243,22 +258,6 @@
                         In the final competition at the end of the semester, our robot was a top 16 finisher out of 54 robots!
                     </p>
                     <a href="https://drive.google.com/file/d/1buM94i_diCfLBa29rp9NgP4dp4vUYT8D/view" target="_blank" class="project-link">Check it Out</a> 
-                </div>
-                <div class="project-container project-card">
-                    <img
-                        src="assets/images/checkers.png"
-                        alt="robot"
-                        loading="lazy"
-                        class="project-pic"
-                    />
-                    <h3 class="project-title">FEH Software Design Project: Checkers</h3>
-                    <p class="project-details">
-                        During my first year engineering course, we were tasked with using C++ to build a game completely from scratch within a week.
-                        With the help of my partner, we developed a game of Checkers which included saved scoreboard capabilities, board customization,
-                        and even an AI opponent for solo play. Additionally, the user could play turn-based with another user for a more competitive experience.
-                        See the video above for more information!
-                    </p>
-                    <a href="https://www.youtube.com/watch?v=e0gbpO06FGE" target="_blank" class="project-link">Check it Out</a>
                 </div>
             </div>
         </section>
@@ -337,10 +336,78 @@
                 </div>
             </div>
         </section>
+        <section class="coursework-separator">
+            <hr>
+        </section>
 
         <!-- Contact section -->
+        <section class="contact" id="contact">
+            <h2>Contact Me!</h2>
+            <div class="contact-form-container">
+                <div class="contact-form">
+                    <form action="https://formspree.io/f/mnnaanoo" method="POST">
+                        <div class="form-control">
+                            <label for="name">Name</label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="sender-name"
+                                placeholder="Enter Your Name"
+                                class="input-field"
+                                required
+                            />
+                        </div>
+                        <div class="form-control">
+                            <label for="email">Email</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="sender-email"
+                                placeholder="Enter Your Email"
+                                class="input-field"
+                                required
+                            />
+                        </div>
+                        <div class="form-control">
+                            <label for="message">Message</label>
+                            <textarea
+                                id="message"
+                                cols="60"
+                                rows="10"
+                                placeholder="Enter Your Message"
+                                name="message"
+                                class="input-field"
+                                required
+                            ></textarea>
+                        </div>
+                        <input
+                            type="submit"
+                            value="Submit"
+                            id="submit-btn"
+                            class="submit-btn"
+                        />
+                    </form>
+                </div>
+            </div>
+        </section>
 
         <!-- Social accounts - Fixed to the right -->
+        <div class="socials">
+            <a href="https://www.linkedin.com/in/jackson-bean-158274239/" target="_blank"
+                ><img
+                  src="assets/icons/icon_LinkedIn.png"
+                  alt="LinkedIn"
+                  loading="lazy"
+                  class="socicon"
+            /></a>
+            <a href="https://github.com/jhbean03" target="_blank"
+                ><img
+                  src="assets/icons/icon_GitHub.png"
+                  alt="GitHub"
+                  loading="lazy"
+                  class="socicon"
+            /></a>
+        </div>
 
         <!-- Scroll to top -->
 
