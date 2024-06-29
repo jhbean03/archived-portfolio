@@ -46,6 +46,9 @@ a:hover {
 
 body {
     font-family: var(--font-family);
+}
+
+html, body {
     max-width: 100%;
     overflow-x: hidden;
 }
@@ -638,7 +641,11 @@ footer {
 
     /* Skills Section formatting */
     .second-set {
-        margin-left: -19px
+        margin-left: -19px;
+    }
+
+    .second-set h3 {
+        margin-left: 19px;
     }
 
     /* Project Section formatting */
