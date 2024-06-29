@@ -325,8 +325,8 @@ nav ul li {
 }
 
 .coursework ul {
-    width: 40rem;
-    height: 10rem;
+    width: 450px;
+    height: 11.5rem;
     font-family: var(--font-family-body);
 }
 
@@ -346,6 +346,7 @@ nav ul li {
     padding-bottom: 50px;
     padding-top: 20px;
     margin: 30px;
+    width: 500px;
 }
 
 .coursework-separator {
