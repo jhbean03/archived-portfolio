@@ -551,7 +551,7 @@ footer {
     }
 
     .third-year li {
-        width: 1px;
+        width: 500px;
     }
 
     .second-year {
@@ -559,7 +559,7 @@ footer {
     }
 
     .second-year li {
-        width: 1px;
+        width: 500px;
     }
 
     .first-year {
@@ -567,7 +567,7 @@ footer {
     }
 
     .first-year li {
-        width: 1px;
+        width: 500px;
     }
 
     /* Contact Form Section formatting */
@@ -577,21 +577,51 @@ footer {
 
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 430px) {
+    /* Hero Section formatting */
     .hero img {
         height: 16rem;
         width: 21rem;
     }
 
+    /* More About Section formatting */
     .bio {
         width: 18.3rem;
     }
 
+    /* Project Section formatting */
     .project-container {
         width: 26rem;
     }
 
     .contact-form-container {
         max-width: 17.75rem;
+    }
+
+    /* Skills Section formatting */
+    .additional-skills-container {
+        align-items: center;
+    }
+
+    .skill-list {
+        font-size: 12px;
+        width: 100px;
+    }
+
+    /* Courswork Section formatting */
+    .semester {
+        height: 350px;
+    }
+
+    .third-year li {
+        width: 300px;
+    }
+
+    .second-year li {
+        width: 300px;
+    }
+
+    .first-year li {
+        width: 300px;
     }
 }
