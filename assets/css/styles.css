@@ -518,6 +518,8 @@ footer {
     /* Skills Section formatting */
     .first-set {
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     .second-set {
