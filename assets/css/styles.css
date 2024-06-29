@@ -626,3 +626,26 @@ footer {
         width: 300px;
     }
 }
+
+@media screen and (max-width: 390px) {
+    /* Hero Section formatting */
+    .hero img {
+        height: 14rem;
+        width: 21rem;
+    }
+
+    /* Skills Section formatting */
+    .second-set {
+        margin-left: -19px
+    }
+
+    /* Project Section formatting */
+    .project-container {
+        width: 20rem;
+    }
+
+    /* Courswork Section formatting */
+    .semester {
+        width: 330px;
+    }
+}
