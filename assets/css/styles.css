@@ -46,6 +46,8 @@ a:hover {
 
 body {
     font-family: var(--font-family);
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 /* Navbar */
