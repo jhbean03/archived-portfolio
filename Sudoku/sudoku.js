@@ -60,136 +60,169 @@ function selectTile() {
 }
 
 function generateBoard() {
+    // Initialize the board
     let board = [
-        "---------",
-        "---------",
-        "---------",
-        "---------",
-        "---------",
-        "---------",
-        "---------",
-        "---------",
-        "---------",
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0]
     ];
 
-    // Set up a validity matrix
-    let validityMatrix = [[[]]];
+    // Initialize and shuffle number list
+    let numberList = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    shuffle(numberList);
+
+    return true;
+}
+
+function checkGrid(grid) {
+    // Check to see if there are any unfilled tiles
     for (let i = 0; i < 9; i++) {
         for (let j = 0; j < 9; j++) {
-            for (let k = 0; k < 9; k++) {
-                validityMatrix[i][j][k] = true;
+            if (grid[i][j] == 0) {
+                return false;
             }
         }
     }
 
-    // Start filling in the Sudoku board
-    for (let i = 0; i < 9; i++) {
-        for (let j = 0; j < 9; j++) {
-            // Randomly select a number for (i, j) coordinate
-            let num = Math.floor((Math.random() * 9) + 1);
-            let counter = 0;
-            while (validityMatrix[i][j][num - 1] == false) {
-                num = Math.floor((Math.random() * 9) + 1);
-                counter++;
-                if (counter >= MAX_RANDOM_RUNS) {
-                    num = 0;
-                    while (validityMatrix[i][j][num - 1] == false) {
-                        num++;
-                    }
-                }
-            }
+    // Return true if we have a complete grid!
+    return true;
+}
 
-            // Set the value of the board at this coordinate equal to this value
-            let numString = board[i].substring(0, j) + num.toString() + board[i].substring(j+1, 9);
-            board[i] = numString;
+function solveGrid(grid) {
+    var counter;
 
-            // Update the validity matrix for the row and column
-            for (let k = 0; k < 9; k++) {
-                validityMatrix[i][k][num - 1] = false;
-                validityMatrix[k][j][num - 1] = false;
-            }
-
-            // Update the validiy matrix for the box
-            if (i < 3) {
-                // For upper right box
-                if (j < 3) {
-                    for (let k = 0; k < 3; k++) {
-                        for (let m = 0; m < 3; m++) {
-                            validityMatrix[k][m][num - 1] = false;
+    // Find the next empty cell
+    for (let i = 0; i < 81; i++) {
+        // Define row and column variables
+        let row = Math.floor(i / 9);
+        let column = i % 9;
+        
+        // Check if the element at this coordinate has been filled yet
+        if (grid[row][column] == 0) {
+            for (let value = 1; value < 10; value++) {
+                // Check that this value has not already been used in row
+                if (!grid[row].includes(value)) {
+                    // Check that this value has not already been used in column
+                    if (!isInColumn(grid, column, value)) {
+                        // Identify which of the 9 squares is being updated
+                        let square = [[], [], []];
+                        if (row < 3) {
+                            if (column < 3) {
+                                for (let j = 0; j < 3; j++) {
+                                    for (let k = 0; k < 3; k++) {
+                                        square[j][k] = grid[j][k];
+                                    }
+                                }
+                            } else if (column < 6) {
+                                for (let j = 0; j < 3; j++) {
+                                    for (let k = 3; k < 6; k++) {
+                                        square[j][k - 3] = grid[j][k];
+                                    }
+                                }
+                            } else {
+                                for (let j = 0; j < 3; j++) {
+                                    for (let k = 6; k < 9; k++) {
+                                        square[j][k - 6] = grid[j][k];
+                                    }
+                                }
+                            }
+                        } else if (row < 6) {
+                            if (column < 3) {
+                                for (let j = 3; j < 6; j++) {
+                                    for (let k = 0; k < 3; k++) {
+                                        square[j - 3][k] = grid[j][k];
+                                    }
+                                }
+                            } else if (column < 6) {
+                                for (let j = 3; j < 6; j++) {
+                                    for (let k = 3; k < 6; k++) {
+                                        square[j - 3][k - 3] = grid[j][k];
+                                    }
+                                }
+                            } else {
+                                for (let j = 3; j < 6; j++) {
+                                    for (let k = 6; k < 9; k++) {
+                                        square[j - 3][k - 6] = grid[j][k];
+                                    }
+                                }
+                            }
+                        } else {
+                            if (column < 3) {
+                                for (let j = 6; j < 9; j++) {
+                                    for (let k = 0; k < 3; k++) {
+                                        square[j - 6][k] = grid[j][k];
+                                    }
+                                }
+                            } else if (column < 6) {
+                                for (let j = 6; j < 9; j++) {
+                                    for (let k = 3; k < 6; k++) {
+                                        square[j - 6][k - 3] = grid[j][k];
+                                    }
+                                }
+                            } else {
+                                for (let j = 6; j < 9; j++) {
+                                    for (let k = 6; k < 9; k++) {
+                                        square[j - 6][k - 6] = grid[j][k];
+                                    }
+                                }
+                            }
                         }
-                    }
 
-                // For upper middle box
-                } else if (j < 6) {
-                    for (let k = 0; k < 3; k++) {
-                        for (let m = 3; m < 6; m++) {
-                            validityMatrix[k][m][num - 1] = false;
-                        }
-                    }
-
-                // For upper left box
-                } else if (j < 9) {
-                    for (let k = 0; k < 3; k++) {
-                        for (let m = 6; m < 9; m++) {
-                            validityMatrix[k][m][num - 1] = false;
-                        }
-                    }
-                }
-            }
-            if (i < 6) {
-                // For middle right box
-                if (j < 3) {
-                    for (let k = 3; k < 6; k++) {
-                        for (let m = 0; m < 3; m++) {
-                            validityMatrix[k][m][num - 1] = false;
-                        }
-                    }
-
-                // For center box
-                } else if (j < 6) {
-                    for (let k = 3; k < 6; k++) {
-                        for (let m = 3; m < 6; m++) {
-                            validityMatrix[k][m][num - 1] = false;
-                        }
-                    }
-
-                // For middle left box
-                } else if (j < 9) {
-                    for (let k = 3; k < 6; k++) {
-                        for (let m = 6; m < 9; m++) {
-                            validityMatrix[k][m][num - 1] = false;
-                        }
-                    }
-                }
-            }
-            if (i < 9) {
-                // For lower right box
-                if (j < 3) {
-                    for (let k = 6; k < 9; k++) {
-                        for (let m = 0; m < 3; m++) {
-                            validityMatrix[k][m][num - 1] = false;
-                        }
-                    }
-
-                // For lower middle box
-                } else if (j < 6) {
-                    for (let k = 6; k < 9; k++) {
-                        for (let m = 3; m < 6; m++) {
-                            validityMatrix[k][m][num - 1] = false;
-                        }
-                    }
-
-                // For lower right box
-                } else if (j < 9) {
-                    for (let k = 6; k < 9; k++) {
-                        for (let m = 6; m < 9; m++) {
-                            validityMatrix[k][m][num - 1] = false;
+                        // Check that this value has not been used within this square
+                        if (!square[0].contains(value) && !square[1].contains(value) && !square[2].contains(value)) {
+                            grid[row][column] = value;
+                            
+                            // If the grid is valid, increment and continue; if not, recursively call solveGrid
+                            if (checkGrid(grid)) {
+                                counter++;
+                                break;
+                            } else {
+                                if (solveGrid(grid)) {
+                                    return true;
+                                }
+                            }
                         }
                     }
                 }
             }
+            break;
         }
     }
+    grid[row][column] = 0;
+}
 
-    return board;
+function isInColumn(grid, col, val) {
+    let isInCol = false;
+    let counter = 0;
+    while (isInCol == false && counter < 9) {
+        isInCol = (grid[counter][col] == val);
+        counter++;
+    }
+    return isInCol;
+}
+
+function fillGrid(grid) {
+    var counter;
+}
+
+function shuffle(array) {
+    let currentIndex = array.length;
+  
+    // While there remain elements to shuffle
+    while (currentIndex != 0) {
+  
+      // Pick a remaining element
+      let randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      // And swap it with the current element
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
 }
