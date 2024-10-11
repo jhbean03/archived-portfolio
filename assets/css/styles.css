@@ -513,6 +513,14 @@ footer {
     }
 
     /* Coursework Section formatting */
+    .fourth-year {
+        flex-direction: column;
+    }
+
+    .fourth-year li {
+        width: 500px;
+    }
+
     .third-year {
         flex-direction: column;
     }
@@ -570,6 +578,11 @@ footer {
     .semester {
         height: 350px;
     }
+
+    .fourth-year li {
+        width: 300px;
+    }
+
 
     .third-year li {
         width: 300px;
