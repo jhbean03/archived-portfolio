@@ -425,7 +425,7 @@ footer {
 }
 
 /* Updating the view for screens on other devices */
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 768px) {
     /* Navbar formatting */
     nav {
         padding: 1.5rem 1rem;
@@ -548,6 +548,17 @@ footer {
 
     .first-year li {
         width: 500px;
+    }
+
+    /* Resume formatting */
+    .pdf {
+        width: 100%;
+        height: auto;
+        aspect-ratio: unset;
+    }
+
+    .resumeContainer {
+        padding: 10px;
     }
 
 }
