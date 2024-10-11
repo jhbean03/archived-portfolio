@@ -371,6 +371,7 @@ nav ul li {
     width: 70%;
     height: 100%;
     aspect-ratio: 4/3;
+    margin-right: 0;
 }
 
 .resume h2 {
@@ -380,7 +381,11 @@ nav ul li {
 }
 
 .resume p {
-    margin-top: 2rem;
+    text-align: center;
+}
+
+.resumeContainer {
+    position: relative;
     text-align: center;
 }
 
